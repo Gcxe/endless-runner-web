@@ -1,6 +1,12 @@
-/* endless_runner.js (polished)
-   Requires an HTML file containing: <canvas id="c"></canvas><script src="endless_runner.js"></script>
-*/
+// src/main.js
+console.log("main.js loaded");
+
+const canvas = document.getElementById("c");
+if (!canvas) {
+  throw new Error("Canvas #c not found");
+}
+
+// ↓ your existing endless runner code continues below
 
 window.addEventListener("error", (e) => {
   const c = document.getElementById("c");
