@@ -2,6 +2,21 @@
    Requires an HTML file containing: <canvas id="c"></canvas><script src="endless_runner.js"></script>
 */
 
+window.addEventListener("error", (e) => {
+  const c = document.getElementById("c");
+  if (!c) return;
+  const ctx = c.getContext("2d");
+  ctx.setTransform(1,0,0,1,0,0);
+  ctx.clearRect(0,0,c.width,c.height);
+  ctx.fillStyle = "black";
+  ctx.fillRect(0,0,c.width,c.height);
+  ctx.fillStyle = "red";
+  ctx.font = "16px monospace";
+  ctx.fillText("JS ERROR:", 10, 20);
+  ctx.fillText(String(e.message), 10, 45);
+});
+
+
 (() => {
   "use strict";
 
